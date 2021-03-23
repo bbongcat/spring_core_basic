@@ -1,11 +1,21 @@
 package com.spring.core.basic.member;
 
+import com.spring.core.basic.config.AppConfig;
+import javafx.application.Application;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class MemberMain {
 
     public static void main(String[] args) {
-        
-        MemberService memberService = new MemberServiceImpl();
-        
+
+//        AppConfig appConfig = new AppConfig();
+//        MemberService memberService = appConfig.memberService();
+
+        //스프링 컨테이너 객체를 생성
+        ApplicationContext appConfig = new AnnotationConfigApplicationContext(AppConfig.class);
+        MemberService memberService = appConfig.getBean(MemberService.class);
+
         //회원가입 대상 객체
         Member member = new Member(1L, "김철수", Grade.VIP);
         Member member2 = new Member(2L, "박영희", Grade.BASIC);
