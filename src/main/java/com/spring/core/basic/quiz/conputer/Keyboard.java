@@ -1,5 +1,8 @@
 package com.spring.core.basic.quiz.conputer;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Keyboard {
 
     public void info() {

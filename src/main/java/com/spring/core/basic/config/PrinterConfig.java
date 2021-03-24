@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class PrinterConfig {
 
+
     //Printer 라는 빈이 등록, bean의 이름은 printer
     @Bean
     public Printer printer() {
